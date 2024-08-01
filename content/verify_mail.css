@@ -1,0 +1,49 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.name_app{
+    font-family: 'Brush Script MT', cursive;
+    font-size: 4em;
+}
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.verification-input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 24px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.verification-input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    outline: none;
+}

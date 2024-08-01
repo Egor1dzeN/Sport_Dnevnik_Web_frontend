@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение кода</title>
+    <link rel="stylesheet" href="content/verify_mail.css">
+    <script src="content/verify_mail.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="name_app">
+        Sport Dnevnik
+    </div>
+    <h1>Введите код подтверждения</h1>
+    <div class="input-wrapper">
+        <form id="form" onsubmit="submitForm(event)">
+            <input type="text" pattern="\d*" class="verification-input" maxlength="1" id="input1"
+                   onkeypress="return isNumberKey(event)" oninput="moveFocus(1)">
+            <input type="text" class="verification-input" maxlength="1" id="input2" oninput="moveFocus(2)"
+                   onkeypress="return isNumberKey(event)">
+            <input type="text" class="verification-input" maxlength="1" id="input3" oninput="moveFocus(3)"
+                   onkeypress="return isNumberKey(event)">
+            <input type="text" class="verification-input" maxlength="1" id="input4" oninput="moveFocus(4)"
+                   onkeypress="return isNumberKey(event)">
+            <input type="text" class="verification-input" maxlength="1" id="input5" oninput="moveFocus(5)"
+                   onkeypress="return isNumberKey(event)">
+            <input type="text" class="verification-input" maxlength="1" id="input6" oninput="moveFocus(6)"
+                   onkeypress="return isNumberKey(event)">
+        </form>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('form');
+    form.addEventListener('submit', function (event){
+        event.preventDefault();
+    })
+</script>
+
+</body>
+</html>

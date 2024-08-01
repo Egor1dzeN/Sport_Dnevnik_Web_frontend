@@ -1,0 +1,66 @@
+<body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #4A90E2, #9013FE);
+        color: white;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .logo h1 {
+        font-family: 'Pacifico', cursive;
+        font-size: 4em;
+        margin: 0;
+    }
+
+    .logo p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.5em;
+        margin: 0.5em 0;
+        letter-spacing: 0.1em;
+    }
+
+    .logo p span {
+        color: #FFD700;
+    }
+
+    .message {
+        margin: 1em 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2em;
+    }
+
+    .confirm-button {
+        padding: 0.7em 2em;
+        font-size: 1em;
+        font-family: 'Roboto', sans-serif;
+        color: #4A90E2;
+        background-color: #FFD700;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .confirm-button:hover {
+        background-color: #4A90E2;
+        color: #FFD700;
+    }
+</style>
+<div class="logo">
+    <h1>Sport Dnevnik</h1>
+    <p>Your daily sports journal <span>2024</span></p>
+</div>
+<div class="message">
+    Спасибо за регистрацию!
+</div>
+<button class="confirm-button"><a>Подтвердить почту</a></button>
+</body>
