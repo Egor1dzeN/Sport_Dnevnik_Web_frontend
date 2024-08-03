@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+header{
+    background-color: #5fc676;
+}
+.header2 {
+    background-color: #28a745;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Brush Script MT', cursive;
+}
+.header2 nav {
+    display: flex;
+    gap: 15px;
+}
+.header2 nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+.link-list {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+.link-list a {
+    margin: 0 20px;
+    color: #28a745;
+    text-decoration: none;
+    font-size: 1em;
+}
+.container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+footer {
+    background-color: #28a745;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.post{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.post-header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px gray solid;
+}
+.post-header .nickname{
+    color: #4CAF50;
+    font-weight: bold;
+}
+.post-info{
+    display: flex;
+    justify-content: left;
+}
+.post-info span:not(:first-child){
+    margin-left: 20px;
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav {
+        margin-top: 10px;
+        gap: 10px;
+    }
+    .link-list {
+        padding: 10px 10px;
+    }
+    .link-list a {
+        margin: 0 10px;
+        font-size: 0.9em;
+    }
+}
+.comments{
+    margin-top: 10px;
+    border-top: #9c9c9c 1px solid;
+    padding-top: 10px;
+}

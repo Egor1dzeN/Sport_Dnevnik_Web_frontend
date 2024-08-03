@@ -1,15 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя страница</title>
+    <link rel="stylesheet" href="content/index.css">
 </head>
 <body>
-<button onclick="clickBtn()">
-    Войти ВК!
-</button>
-<button onclick="logout()">
-    Выйти
-</button>
+<header>
+    <div class="header2">
+        <div class="logo">Sport Dnevnik</div>
+        <nav>
+            <a href="#">Вход</a>
+            <a href="#">Регистрация</a>
+        </nav>
+    </div>
+    <div style="">
+        <div class="link-list">
+            <a href="#">Главная</a>
+            <a href="#">Добавить тренировку</a>
+            <a href="#">Друзья</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="post">
+        <div class="post-header">
+                <span class="nickname">Runner123</span>
+                <span class="time">1 августа 2024, 08:00</span>
+        </div>
+        <div class="post-content">
+            <img src="training-photo.jpg" alt="Фото тренировки">
+        </div>
+        <div class="post-info">
+            <span><b>10</b>км</span>
+            <span><b>1:31'23</b></span>
+            <span><b>12</b>км/ч</span>
+
+        </div>
+        <span> Отличная тренировка на свежем воздухе!</span>
+        <div class="comments">
+            <div>
+                <span>Комментарии:</span>
+            </div>
+            <div>
+                <span><b>User1</b> Отличная работа!</span>
+            </div>
+            <div>
+                <span><b>User2</b> Какой маршрут выбрали?</span>
+            </div>
+        </div>
+
+    </div>
+    <!-- Добавьте больше постов по мере необходимости -->
+</div>
+
+<footer>
+    &copy; 2024 Моя страница. Все права защищены.
+</footer>
 </body>
 </html>
