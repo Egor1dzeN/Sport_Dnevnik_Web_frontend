@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AR&display=swap');
+
 body {
     padding: 0;
     margin: 0
+}
+
+.navbar-brand {
+    font-family: Playwrite AR;
+    font-weight: 600;
 }
 
 #bg-img {
