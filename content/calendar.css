@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.calendar-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.calendar th, .calendar td {
+    text-align: center;
+    padding: 10px;
+}
+
+.calendar th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+.calendar td {
+    position: relative;
+    height: 80px;
+}
+
+.calendar .day-circle {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: white;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.calendar .highlighted {
+    background-color: #007bff;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-weight: bold;
+}
