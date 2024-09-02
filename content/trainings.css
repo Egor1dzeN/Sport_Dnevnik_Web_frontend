@@ -38,7 +38,7 @@
 .likes-comments button:hover {
     background: #0056b3;
 }
-.comments {
+.comment-container {
     margin-top: 20px;
 }
 .comment {

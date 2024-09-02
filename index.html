@@ -5,19 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Моя страница</title>
     <link rel="stylesheet" href="content/index.css">
+    <link rel="stylesheet" href="content/header.css">
 </head>
 <body>
 <header>
     <div class="header2">
-        <div class="logo">Sport Dnevnik</div>
-        <nav>
-            <a href="#">Вход</a>
-            <a href="#">Регистрация</a>
+        <div class="logo">Active Jorney</div>
+        <nav style="margin-right: 30px">
+            <img src="content/bell.svg" width="25" style="margin-right: 10px">
+            <div id="settings">
+                <span class="settings" style="font-size: 22px;" id="account">Egor1dzeN</span>
+                <div class="dropdown-content">
+                    <a href="#">Личный кабинет</a>
+                    <a href="#">Настройки</a>
+                    <a href="#">Выход</a>
+                </div>
+            </div>
         </nav>
     </div>
+
     <div style="">
         <div class="link-list">
-            <a href="#">Главная</a>
+            <a href="#" class="current_page">Главная</a>
             <a href="#">Добавить тренировку</a>
             <a href="#">Друзья</a>
         </div>
@@ -25,39 +34,103 @@
 </header>
 
 <div class="container">
-    <div class="post">
-        <div class="post-header">
+    <div class="type-following">
+        <button id="all" onclick="highlight('all')" style="color: white; background-color: #00b1ff">Все</button>
+        <button id="me" onclick="highlight('me')" style="padding: 7px 15px">Я</button>
+        <button id="subscription" onclick="highlight('subscription')">Подписки</button>
+    </div>
+    <div class="posts" id="posts">
+        <div class="post">
+            <div class="post-header">
                 <span class="nickname">Runner123</span>
                 <span class="time">1 августа 2024, 08:00</span>
-        </div>
-        <div class="post-content">
-            <img src="training-photo.jpg" alt="Фото тренировки">
-        </div>
-        <div class="post-info">
-            <span><b>10</b>км</span>
-            <span><b>1:31'23</b></span>
-            <span><b>12</b>км/ч</span>
+            </div>
+            <div class="post-content">
+                <img src="training-photo.jpg" alt="Фото тренировки">
+            </div>
+            <div class="post-info">
+                <span><b>10</b>км</span>
+                <span><b>1:31'23</b></span>
+                <span><b>12</b>км/ч</span>
+
+            </div>
+            <span> Отличная тренировка на свежем воздухе!</span>
+            <div class="like">
+                <div class="like-image">
+                    <img src="content/unlike.svg" width="30" onmouseover="this.src = 'content/unlike_hover.svg'"
+                         onmouseout="this.src ='content/unlike.svg'" onclick="this.src = 'content/like.svg'">
+                </div>
+                <div>1</div>
+            </div>
+            <div class="comment-container">
+                <div style="margin-bottom: 10px">
+                    <span>Комментарии:</span>
+                </div>
+                <div class="comments">
+                    <div>
+                        <span><b>User1</b> Отличная работа!</span>
+                    </div>
+                    <div>
+                        <span><b>User2</b> Какой маршрут выбрали?</span>
+                    </div>
+                </div>
+                <div class="send-message" style="display: flex; align-items: center">
+                    <textarea oninput="input_message(this)" placeholder="Введите комментарий..." rows="1"></textarea>
+
+                    <button id="ids1" class="send-message-btn" disabled>Отправить</button>
+
+                </div>
+            </div>
 
         </div>
-        <span> Отличная тренировка на свежем воздухе!</span>
-        <div class="comments">
-            <div>
-                <span>Комментарии:</span>
+        <div class="post">
+            <div class="post-header">
+                <span class="nickname">Runner123</span>
+                <span class="time">1 августа 2024, 08:00</span>
             </div>
-            <div>
-                <span><b>User1</b> Отличная работа!</span>
+            <div class="post-content">
+                <img src="training-photo.jpg" alt="Фото тренировки">
             </div>
-            <div>
-                <span><b>User2</b> Какой маршрут выбрали?</span>
-            </div>
-        </div>
+            <div class="post-info">
+                <span><b>10</b>км</span>
+                <span><b>1:31'23</b></span>
+                <span><b>12</b>км/ч</span>
 
+            </div>
+            <span> Отличная тренировка на свежем воздухе!</span>
+            <div class="like">
+                <div class="like-image">
+                    <img src="content/unlike.svg" width="30" onmouseover="this.src = 'content/unlike_hover.svg'"
+                         onmouseout="this.src ='content/unlike.svg'" onclick="this.src = 'content/like.svg'">
+                </div>
+                <div>1</div>
+            </div>
+            <div class="comment-container">
+                <div style="margin-bottom: 10px">
+                    <span>Комментарии:</span>
+                </div>
+                <div>
+                    <span><b>User1</b> Отличная работа!</span>
+                </div>
+                <div>
+                    <span><b>User2</b> Какой маршрут выбрали?</span>
+                </div>
+            </div>
+
+        </div>
     </div>
     <!-- Добавьте больше постов по мере необходимости -->
 </div>
-
-<footer>
-    &copy; 2024 Моя страница. Все права защищены.
-</footer>
+<div class="load-more-div">
+    <button class="load-more-btn">Загрузить еще тренировки</button>
+</div>
+<div id="errorNotification" class="notification">
+    Ошибка соединения с сервером. Попробуйте позже.
+</div>
+<!--<footer>-->
+<!--    &copy; 2024 Моя страница. Все права защищены.-->
+<!--</footer>-->
 </body>
 </html>
+<script src="content/index.js"></script>
+<script src="content/header_dropdown_settings.js"></script>

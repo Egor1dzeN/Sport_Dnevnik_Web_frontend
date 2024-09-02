@@ -3,14 +3,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     background-color: #f4f4f4;
     margin: 0;
 }
 
 .calendar-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 300px;
 }
 
 .calendar {
@@ -21,7 +21,7 @@ body {
 
 .calendar th, .calendar td {
     text-align: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 .calendar th {
@@ -31,14 +31,14 @@ body {
 
 .calendar td {
     position: relative;
-    height: 80px;
+    height: 10px;
 }
 
 .calendar .day-circle {
     display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
     border-radius: 50%;
     background-color: #ccc;
     color: white;
@@ -48,8 +48,8 @@ body {
 
 .calendar .highlighted {
     background-color: #007bff;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     font-weight: bold;
 }

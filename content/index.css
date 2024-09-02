@@ -1,52 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AR&display=swap');
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
     color: #333;
 }
-header{
-    background-color: #5fc676;
-}
-.header2 {
-    background-color: #28a745;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo {
-    color: #fff;
-    font-size: 1.5em;
-    font-weight: bold;
-    font-family: 'Brush Script MT', cursive;
-}
-.header2 nav {
-    display: flex;
-    gap: 15px;
-}
-.header2 nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1em;
-}
-.link-list {
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-}
-.link-list a {
-    margin: 0 20px;
-    color: #28a745;
-    text-decoration: none;
-    font-size: 1em;
-}
+
 .container {
     padding: 20px;
     max-width: 900px;
     margin: 0 auto;
 }
+
+.type-following {
+    display: flex;
+    justify-content: center;
+}
+
+.type-following button {
+    background-color: #dfdfdf;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 10px;
+}
+
+.type-following button:not(:first-child) {
+    margin-left: 10px;
+}
+
 footer {
     background-color: #28a745;
     color: #fff;
@@ -56,46 +38,172 @@ footer {
     bottom: 0;
     width: 100%;
 }
-.post{
+
+.post {
     background-color: #fff;
     border: 1px solid #ccc;
+    border-radius: 8px;
     padding: 10px;
+    margin-top: 20px;
 }
-.post-header{
+
+.post-header {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px gray solid;
 }
-.post-header .nickname{
+
+.post-header .nickname {
     color: #4CAF50;
     font-weight: bold;
 }
-.post-info{
+
+.post-info {
+
     display: flex;
     justify-content: left;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
-.post-info span:not(:first-child){
+
+.post-info span:not(:first-child) {
     margin-left: 20px;
 }
+
+.like {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.like-image:hover {
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: flex-start;
     }
+
     nav {
         margin-top: 10px;
         gap: 10px;
     }
+
     .link-list {
         padding: 10px 10px;
     }
+
     .link-list a {
         margin: 0 10px;
         font-size: 0.9em;
     }
 }
-.comments{
+
+.comment-container {
     margin-top: 10px;
     border-top: #9c9c9c 1px solid;
     padding-top: 10px;
+}
+
+.comments div {
+    margin-bottom: 3px;
+}
+
+textarea{
+    width: 100%;
+    max-height: 300px; /* Опционально, чтобы ограничить максимальную высоту */
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1.5;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Отключаем ручное изменение размера */
+    box-sizing: border-box;
+    overflow-y: hidden; /* Скрываем вертикальную прокрутку */
+    transition: border-color 1s;
+}
+textarea:focus {
+    outline: none;
+    border-color: #0065d6;
+}
+.send-message{
+    margin-right: 15px;
+    margin-top: 10px;
+}
+.send-message-btn{
+    padding: 10px;
+    margin-left: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.send-message-btn:disabled{
+    background-color: #cfcfcf;
+    color: #0b0202;
+    cursor: auto;
+}
+.send-message-btn:not(:disabled){
+    background-color: #007bff;
+    color: white;
+}
+.load-more-div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#send-message-btn:disabled{
+    content: url("comment-disable.svg");
+}
+#send-message-btn:not(disabled){
+    content: url("comment-enable.svg");
+}
+.load-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff; /* Синий цвет кнопки */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Анимация нажатия */
+}
+
+/* Стили при наведении */
+.load-more-btn:hover {
+    background-color: #0056b3; /* Более темный синий цвет при наведении */
+}
+
+.notification {
+    display: none; /* Скрываем уведомление по умолчанию */
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: #f44336; /* Красный цвет для ошибки */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    z-index: 1;
+    animation: fadein 2.0s;
+}
+
+/* Анимация для появления и исчезновения уведомления */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
