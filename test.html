@@ -2,73 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кнопка справа от textarea</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+    <title>Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.2/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script>
+        let stompClient = null;
+
+        function connect() {
+            const socket = new SockJS('http://localhost/ws');
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, function (frame) {
+                console.log('Connected: ' + frame);
+                stompClient.subscribe('http://localhost/topic/messages', function (message) {
+                    showMessage(message.body);
+                });
+            });
         }
 
-        .container {
-            display: flex;
-            align-items: center;
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            stompClient.send("http://localhost/app/sendMessage", {}, message);
+            document.getElementById("message").value = '';
         }
 
-        textarea {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 300px;
-            height: 100px;
-            resize: none;
+        function showMessage(message) {
+            var messagesElement = document.getElementById("messages");
+            var messageElement = document.createElement("div");
+            messageElement.textContent = message;
+            messagesElement.appendChild(messageElement);
         }
-
-        .button {
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-left: 10px; /* Отступ слева */
-            height: 42px; /* Высота кнопки, совпадающая с высотой строки textarea */
-        }
-
-        .button svg {
-            margin-right: 5px;
-            fill: white;
-            width: 20px;
-            height: 20px;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+        window.onload = connect;
+    </script>
 </head>
 <body>
-
-<div class="container">
-    <textarea id="textInput" placeholder="Введите текст..."></textarea>
-    <button class="button" id="submitButton">
-        <!-- Вставьте вашу SVG-иконку здесь -->
-        <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-        </svg>
-        Отправить
-    </button>
-</div>
-
+<h1>Chat</h1>
+<div id="messages"></div>
+<input type="text" id="message" placeholder="Enter message">
+<button onclick="sendMessage()">Send</button>
 </body>
 </html>

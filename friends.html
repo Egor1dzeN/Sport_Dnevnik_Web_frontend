@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="content/friends.css">
+    <link rel="stylesheet" href="content/header.css">
+</head>
+<body>
+<header>
+    <div class="header2">
+        <div class="logo">Active Jorney</div>
+        <nav style="margin-right: 30px">
+            <img id="notification-btn" src="content/bell.svg" width="25" style="margin-right: 10px">
+            <div id="notification-panel" class="notification-panel">
+                <span style="font-weight: bold">Уведомления</span>
+                <div id="notifications-list">
+                    <!-- Notifications will be added here dynamically -->
+                </div>
+            </div>
+            <div id="settings">
+                <span class="settings" style="font-size: 22px;" id="account">Egor1dzeN</span>
+                <div class="dropdown-content">
+                    <a href="#">Личный кабинет</a>
+                    <a href="#">Настройки</a>
+                    <a href="#">Выход</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div style="">
+        <div class="link-list">
+            <a href="#" class="current_page">Главная</a>
+            <a href="createTraining.html">Добавить тренировку</a>
+            <a href="#">Друзья</a>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="type-following">
+        <button id="all" onclick="highlight('all')" style="color: white; background-color: #00b1ff">Мои друзья</button>
+        <button id="me" onclick="highlight('me')" style="padding: 7px 15px">Заявки в друзья</button>
+        <button id="subscription" onclick="highlight('subscription')">Подписки</button>
+    </div>
+</div>
+</body>
+</html>
+<script src="content/header_dropdown_settings.js"></script>
+<script src="content/friends.js"></script>

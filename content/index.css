@@ -23,6 +23,7 @@ body {
     border: none;
     padding: 7px 10px;
     border-radius: 10px;
+    box-shadow: 0 0 3px rgba(55, 55, 55, 0.8);
 }
 
 .type-following button:not(:first-child) {

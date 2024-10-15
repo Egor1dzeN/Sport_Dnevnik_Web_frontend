@@ -12,7 +12,13 @@
     <div class="header2">
         <div class="logo">Active Jorney</div>
         <nav style="margin-right: 30px">
-            <img src="content/bell.svg" width="25" style="margin-right: 10px">
+            <img id="notification-btn" src="content/bell.svg" width="25" style="margin-right: 10px">
+            <div id="notification-panel" class="notification-panel">
+                <span style="font-weight: bold">Уведомления</span>
+                <div id="notifications-list">
+                    <!-- Notifications will be added here dynamically -->
+                </div>
+            </div>
             <div id="settings">
                 <span class="settings" style="font-size: 22px;" id="account">Egor1dzeN</span>
                 <div class="dropdown-content">
@@ -27,7 +33,7 @@
     <div style="">
         <div class="link-list">
             <a href="#" class="current_page">Главная</a>
-            <a href="#">Добавить тренировку</a>
+            <a href="createTraining.html">Добавить тренировку</a>
             <a href="#">Друзья</a>
         </div>
     </div>
